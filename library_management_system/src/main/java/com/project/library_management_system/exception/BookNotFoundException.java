@@ -1,4 +1,4 @@
-package com.capgemini.library_management_system.exception;
+package com.project.library_management_system.exception;
 
 public class BookNotFoundException extends RuntimeException {
 

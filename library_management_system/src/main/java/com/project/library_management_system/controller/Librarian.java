@@ -1,4 +1,4 @@
-package com.capgemini.library_management_system.controller;
+package com.project.library_management_system.controller;
 
 import java.util.InputMismatchException;
 import java.util.Iterator;
@@ -6,19 +6,20 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.omg.CORBA.Request;
+//import org.omg.CORBA.Request;
 
-import com.capgemini.library_management_system.dao.BookDAOImplementation;
-import com.capgemini.library_management_system.dto.Admin;
-import com.capgemini.library_management_system.dto.Book;
-import com.capgemini.library_management_system.dto.User;
-import com.capgemini.library_management_system.exception.BookNotFoundException;
-import com.capgemini.library_management_system.exception.ValidationException;
-import com.capgemini.library_management_system.factory.BookFactory;
-import com.capgemini.library_management_system.service.AdminService;
-import com.capgemini.library_management_system.service.BookService;
-import com.capgemini.library_management_system.service.UserService;
-import com.capgemini.library_management_system.validation.ValidationAdminStudent;
+import com.project.library_management_system.dao.BookDAOImplementation;
+import com.project.library_management_system.dto.Admin;
+import com.project.library_management_system.dto.Book;
+import com.project.library_management_system.dto.User;
+import com.project.library_management_system.exception.BookNotFoundException;
+import com.project.library_management_system.exception.ValidationException;
+import com.project.library_management_system.factory.BookFactory;
+import com.project.library_management_system.service.AdminService;
+import com.project.library_management_system.service.BookService;
+import com.project.library_management_system.service.UserService;
+import com.project.library_management_system.validation.ValidationAdminStudent;
+import com.project.library_management_system.dto.Request;
 
 public class Librarian extends Thread {
 	boolean status = false;
@@ -43,16 +44,19 @@ public class Librarian extends Thread {
 			System.out.println("Press 1 for Admin Page");
 			System.out.println("Press 2 for Student Page");
 			System.out.println("press 3 to exit");
-
+			
+			System.out.println("Enter your choice:");
 			int i = scan.nextInt();
 			switch (i) {
 			case 1:
 				
 				do {
+					System.out.println("Please select your options");
 					System.out.println("Press 1 to Register as Admin");
 					System.out.println("Press 2 for Admin Login ");
 					System.out.println("Press 3 to exit or Continue");
-
+					System.out.println("Enter your choice:");
+					
 					int choice = scan.nextInt();
 					switch (choice) {
 					case 1:
@@ -157,9 +161,9 @@ public class Librarian extends Thread {
 						break;
 
 					case 2:
-						System.out.println("Enter email");
+						System.out.println("Enter Email: ");
 						String email = scan.next();
-						System.out.println("Enter Password");
+						System.out.println("Enter Password: ");
 						String password = scan.next();
 						try {
 							Admin admin1 = service.loginAdmin(email, password);
@@ -187,9 +191,11 @@ public class Librarian extends Thread {
 			
 				UserService userService=BookFactory.getUserService();
 				do {
+					System.out.println("Please select your options");
 					System.out.println("Press 1 to Register as User");
 					System.out.println("Press 2 for User Login ");
 					System.out.println("press 3 to exit or continue");
+					System.out.println("Enter your choice: ");
 
 					int choice1 = scan.nextInt();
 					switch (choice1) {
@@ -304,6 +310,7 @@ public class Librarian extends Thread {
 					case 3:
 						System.out.println("press 1 continue");
 						System.out.println("press 0 stop");
+						System.out.println("Enter your option: ");
 						cOrSStatus = scan.nextInt();
 						if(cOrSStatus==1) 
 						userOperations();
@@ -346,8 +353,10 @@ public class Librarian extends Thread {
 	public void userOperations()
 	{
 		UserService userService=BookFactory.getUserService();
+		System.out.println("Please select your options");
 		System.out.println("press 1 to borrow a book");
 		System.out.println("press 2 to return a book");
+		System.out.println("Enter your option: ");
 		int ch = scan.nextInt();
 	    if(ch == 1)
 	    {
@@ -403,6 +412,7 @@ public class Librarian extends Thread {
 		 */
 
 		BookService service = BookFactory.getBookService();
+		System.out.println("Please select the below options: ");
 		System.out.println("Book Operations");
 		System.out.println("press 1 to add a book");
 		System.out.println("presss 2 to search a book based on title");
@@ -416,17 +426,18 @@ public class Librarian extends Thread {
 		System.out.println("Press 10 Show Requests");
 		System.out.println("Press 10 Receive Returned Books");
 		System.out.println("Press 11 to Go to Main");
+		System.out.println("Enter your option: ");
 		int choice = scan.nextInt();
 		if (choice == 1) {
-			System.out.println("Enter the book id");
+			System.out.println("Enter the book id: ");
 			int bookId = scan.nextInt();
-			System.out.println("Enter the bookTitle");
+			System.out.println("Enter the bookTitle: ");
 			String bookTitle = scan.next();
-			System.out.println("Enter the bookAuthor");
+			System.out.println("Enter the bookAuthor: ");
 			String bookAuthor = scan.next();
-			System.out.println("Enter the bookType");
+			System.out.println("Enter the bookType: ");
 			String bookType = scan.next();
-			System.out.println("Enter the bookPublisher");
+			System.out.println("Enter the bookPublisher: ");
 			String bookPublisher = scan.next();
 			Book book = new Book();
 			service.addBook(book);
@@ -434,7 +445,7 @@ public class Librarian extends Thread {
 		} else if (choice == 2) {
 			try {
 
-				System.out.println("enter booktitle");
+				System.out.println("Enter Book Title:");
 				String bookTitle = scan.next();
 				LinkedList<Book> searchedBookList = service.searchBookTitle(bookTitle);
 				Iterator<Book> iterateSearchedBookList = searchedBookList.iterator();
@@ -448,7 +459,7 @@ public class Librarian extends Thread {
 		} else if (choice == 3) {
 			try {
 
-				System.out.println("enter bookAuthor");
+				System.out.println("Enter Book Author: ");
 				String bookAuthor = scan.next();
 				LinkedList<Book> searchedBookList = service.searchBookAuthor(bookAuthor);
 				Iterator<Book> iterateSearchedBookList = searchedBookList.iterator();
@@ -462,7 +473,7 @@ public class Librarian extends Thread {
 		} else if (choice == 4) {
 			try {
 
-				System.out.println("enter bookType");
+				System.out.println("Enter Book Type: ");
 				String bookType = scan.next();
 				LinkedList<Book> searchedBookList = service.searchBookType(bookType);
 				Iterator<Book> iterateSearchedBookList = searchedBookList.iterator();
@@ -476,11 +487,11 @@ public class Librarian extends Thread {
 		}
 
 		else if (choice == 5) {
-			System.out.println("enter bookid");
+			System.out.println("Enter Book Id: ");
 			int bookId = scan.nextInt();
 			boolean removablestatus = service.removeBook(bookId);
 			if (removablestatus) {
-				System.out.println("book is sucessfully removed");
+				System.out.println("Book is sucessfully removed");
 			} else {
 				throw new BookNotFoundException();
 			}
@@ -499,9 +510,9 @@ public class Librarian extends Thread {
 			
 			User user = new User();
 			Book book = new Book();
-			System.out.println("Enter Book Id");
+			System.out.println("Enter Book Id: ");
 			int bId = scan.nextInt();
-			System.out.println("Enter User Id");
+			System.out.println("Enter User Id: ");
 			int uId = scan.nextInt();
 			book.setBookId(bId);
 			user.setUserId(uId);
@@ -534,7 +545,7 @@ public class Librarian extends Thread {
 					System.out.println("-------------------------------");
 				}
 			} catch (Exception e) {
-				System.out.println("no books present in library");
+				System.out.println("No books are present in the library");
 			}
 		}
 		
@@ -605,7 +616,7 @@ public class Librarian extends Thread {
 
 	@Override
 	public void run() {
-		System.out.println("welcome to library");
+		System.out.println("Welcome to Library");
 		continueOrStop();
 	}
 

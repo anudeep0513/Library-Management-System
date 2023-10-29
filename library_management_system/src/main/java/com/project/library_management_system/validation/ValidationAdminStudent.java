@@ -1,9 +1,9 @@
- package com.capgemini.library_management_system.validation;
+ package com.project.library_management_system.validation;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.capgemini.library_management_system.exception.ValidationException;
+import com.project.library_management_system.exception.ValidationException;
 
 
 public class ValidationAdminStudent {

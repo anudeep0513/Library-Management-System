@@ -1,4 +1,4 @@
-package com.capgemini.library_management_system.controller;
+package com.project.library_management_system.controller;
 
 public class Library {
 	public static void main(String[] args) 

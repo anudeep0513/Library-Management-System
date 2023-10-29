@@ -1,4 +1,4 @@
-package com.capgemini.library_management_system.dto;
+package com.project.library_management_system.dto;
 
 import java.time.LocalDate;
 

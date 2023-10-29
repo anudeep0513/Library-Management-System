@@ -1,10 +1,10 @@
-package com.capgemini.library_management_system.dao;
+package com.project.library_management_system.dao;
 
 
 
 import java.util.LinkedList;
 
-import com.capgemini.library_management_system.dto.Book;
+import com.project.library_management_system.dto.Book;
 
 public interface BookDAO {
 		

@@ -1,11 +1,11 @@
-package com.capgemini.library_management_system.dao;
+package com.project.library_management_system.dao;
 
 import java.util.LinkedList;
 
-import com.capgemini.library_management_system.db.Library_Management_System_DB;
-import com.capgemini.library_management_system.dto.Admin;
-import com.capgemini.library_management_system.dto.Book;
-import com.capgemini.library_management_system.exception.BookNotFoundException;
+import com.project.library_management_system.db.Library_Management_System_DB;
+import com.project.library_management_system.dto.Admin;
+import com.project.library_management_system.dto.Book;
+import com.project.library_management_system.exception.BookNotFoundException;
 
 public class BookDAOImplementation implements BookDAO {
 

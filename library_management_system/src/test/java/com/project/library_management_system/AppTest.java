@@ -1,4 +1,4 @@
-package com.capgemini.library_management_system;
+package com.project.library_management_system;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

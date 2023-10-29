@@ -1,8 +1,8 @@
-package com.capgemini.library_management_system.service;
+package com.project.library_management_system.service;
 
-import com.capgemini.library_management_system.dao.UserDAO;
-import com.capgemini.library_management_system.dto.User;
-import com.capgemini.library_management_system.factory.BookFactory;
+import com.project.library_management_system.dao.UserDAO;
+import com.project.library_management_system.dto.User;
+import com.project.library_management_system.factory.BookFactory;
 
 public class UserServiceImpl implements UserService {
 	private UserDAO userDAO=BookFactory.getUserDAO();

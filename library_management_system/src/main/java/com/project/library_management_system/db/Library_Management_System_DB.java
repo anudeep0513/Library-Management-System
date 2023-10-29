@@ -1,10 +1,10 @@
-package com.capgemini.library_management_system.db;
+package com.project.library_management_system.db;
 
 import java.util.LinkedList;
 
-import com.capgemini.library_management_system.dto.Admin;
-import com.capgemini.library_management_system.dto.Book;
-import com.capgemini.library_management_system.dto.User;
+import com.project.library_management_system.dto.Admin;
+import com.project.library_management_system.dto.Book;
+import com.project.library_management_system.dto.User;
 
 public class Library_Management_System_DB {
 	

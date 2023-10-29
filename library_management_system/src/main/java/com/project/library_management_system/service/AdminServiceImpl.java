@@ -1,8 +1,8 @@
-package com.capgemini.library_management_system.service;
+package com.project.library_management_system.service;
 
-import com.capgemini.library_management_system.dao.AdminDAO;
-import com.capgemini.library_management_system.dto.Admin;
-import com.capgemini.library_management_system.factory.BookFactory;
+import com.project.library_management_system.dao.AdminDAO;
+import com.project.library_management_system.dto.Admin;
+import com.project.library_management_system.factory.BookFactory;
 
 public class AdminServiceImpl implements AdminService{
 

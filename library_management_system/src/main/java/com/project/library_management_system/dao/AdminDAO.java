@@ -1,6 +1,6 @@
-package com.capgemini.library_management_system.dao;
+package com.project.library_management_system.dao;
 
-import com.capgemini.library_management_system.dto.Admin;
+import com.project.library_management_system.dto.Admin;
 
 public interface AdminDAO {
 

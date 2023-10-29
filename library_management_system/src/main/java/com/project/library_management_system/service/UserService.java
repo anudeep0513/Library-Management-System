@@ -1,6 +1,6 @@
-package com.capgemini.library_management_system.service;
+package com.project.library_management_system.service;
 
-import com.capgemini.library_management_system.dto.User;
+import com.project.library_management_system.dto.User;
 
 public interface UserService {
 

@@ -1,9 +1,9 @@
-package com.capgemini.library_management_system.service;
+package com.project.library_management_system.service;
 
 
-import com.capgemini.library_management_system.dto.Admin;
-import com.capgemini.library_management_system.dto.Book;
-import com.capgemini.library_management_system.dto.User;
+import com.project.library_management_system.dto.Admin;
+import com.project.library_management_system.dto.Book;
+import com.project.library_management_system.dto.User;
 
 public interface AdminService {
 
